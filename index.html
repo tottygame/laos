@@ -153,14 +153,14 @@
  <a href="#" onclick="go('main')">ທາງເຂົ້າຫຼັກ</a>
 
 <script>
-  const CONFIG = {
+  // รับค่า ?t=main หรือ backup
+  const p = new URLSearchParams(window.location.search).get("t");
+  const map = {
     main: "https://totti911-Graniva.store/",
     backup: "https://totti911-Shardx.store.site/"
   };
-
-  function go(type) {
-    // เปิดแท็บใหม่แบบไม่โชว์ลิงก์ตรงใน HTML
-    window.open(CONFIG[type], '_blank', 'noopener');
+  if (map[p]) window.location.href = map[p];
+</script>
   }
 </script>
 
